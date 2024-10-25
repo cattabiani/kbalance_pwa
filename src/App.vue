@@ -1,4 +1,33 @@
 <template>
+  <div id="app">
+    <component :is="currentPage" @navigate="navigate" />
+  </div>
+</template>
+
+<script>
+import Home from './components/Home.vue';
+import About from './components/About.vue';
+
+export default {
+  name: 'App',
+  components: {
+    Home,
+    About,
+  },
+  data() {
+    return {
+      currentPage: 'Home',
+    };
+  },
+  methods: {
+    navigate(page) {
+      this.currentPage = page;
+    },
+  },
+};
+</script>
+
+<!-- <template>
   <v-container>
     <v-row align="center" justify="space-between" class="mb-1">
       <h1>kNote</h1>
@@ -71,4 +100,6 @@ onBeforeUnmount(() => {
   document.removeEventListener("visibilitychange", saveToLocalStorageIfHidden);
   window.removeEventListener("beforeunload", saveToLocalStorage);
 });
-</script>
+</script> -->
+
+
