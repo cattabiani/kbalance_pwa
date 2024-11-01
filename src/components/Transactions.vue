@@ -149,7 +149,7 @@ onBeforeUnmount(() => {
   white-space: nowrap;       /* Prevent line breaks */
   overflow: hidden;          /* Hide overflowing content */
   text-overflow: ellipsis;   /* Show ellipsis for overflow */
-  max-width: 85%;         /* Set a max width to control the space */
+  max-width: 70%;         /* Set a max width to control the space */
 }
 
 .right-text {
