@@ -31,26 +31,21 @@
             justify="space-between"
             class="mr-2 ml-2 mb-2 mt-2"
           >
-            <v-col class="d-flex align-center" cols="auto">
+            <v-col cols="auto">
               <v-radio :value="index" />
             </v-col>
-            <v-col>
-              <v-card variant="elevated" width="100%" location="center">
+            <v-col class="d-flex align-center">
+              <v-card variant="elevated" width="100%" location="center" class="mt-5">
                 <div class="text-center">{{ person.text }}</div>
               </v-card>
             </v-col>
-            <v-col class="d-flex align-center" cols="auto">
+            <v-col cols="auto">
               <v-selection-control-group v-model="localData.people[index]"
-                ><v-checkbox
+                ><v-checkbox class="mt-5"
               /></v-selection-control-group>
             </v-col>
-            <v-col class="d-flex align-center" cols="auto">
-              <v-card
-                variant="elevated"
-                width="100%"
-                location="center"
-                style="min-width: 150px"
-              >
+            <v-col cols="auto">
+              <v-card variant="elevated" width="100%" location="center" class="mt-5">
                 <div class="text-center">
                   {{ (localData.owed[index] / 100).toFixed(2) }}
                 </div>

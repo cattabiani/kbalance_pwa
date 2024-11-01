@@ -20,15 +20,16 @@
           justify="space-between"
           class="mr-2 ml-2 mb-1 mt-1"
         >
-          <v-col cols="auto">
-            <p>
+        <v-col cols="auto">
+            <p class="mt-4">
               {{ new Date(getItem(id).date).toLocaleDateString("en-US", {}) }}
-              <span style="margin-left: 20px"></span>
+              <span style="margin-left: 1px"></span>
               {{ getItem(id).text || "new transaction" }}
             </p>
           </v-col>
-          <v-col cols="auto" class="d-flex align-center" style="gap: 50px">
-            <p>{{ (getItem(id).amount / 100).toFixed(2) }}</p>
+            <v-col class="d-flex justify-end">
+            <p class="mt-4">{{ (getItem(id).amount / 100).toFixed(2) }}</p>
+            <span style="margin-left: 5px"></span>
             <v-btn icon @click.stop="deleteItem(id, index)">
               <v-icon>mdi-delete</v-icon>
             </v-btn>
