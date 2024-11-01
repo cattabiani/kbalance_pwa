@@ -18,7 +18,7 @@
         <v-row
           align="center"
           justify="space-between"
-          class="mr-2 ml-2 mb-1 mt-1"
+          class="mb-1 mt-1"
         >
         <v-col cols="auto">
             <p class="mt-4">
