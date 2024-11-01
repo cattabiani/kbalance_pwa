@@ -18,22 +18,16 @@
         <v-row
           align="center"
           justify="space-between"
-          class="mb-1 mt-1"
+          class="mb-1 mt-1 mr-2 ml-2"
         >
-        <v-col cols="auto">
-            <p class="mt-4">
+            <p class="mt-2 transaction-text mr-2">
               {{ new Date(getItem(id).date).toLocaleDateString("en-US", {}) }}
-              <span style="margin-left: 1px"></span>
               {{ getItem(id).text || "new transaction" }}
             </p>
-          </v-col>
-            <v-col class="d-flex justify-end">
-            <p class="mt-4">{{ (getItem(id).amount / 100).toFixed(2) }}</p>
-            <span style="margin-left: 5px"></span>
+            <p class="mt-2 right-text mr-2" justify="right">{{ (getItem(id).amount / 100).toFixed(2) }}</p>
             <v-btn icon @click.stop="deleteItem(id, index)">
               <v-icon>mdi-delete</v-icon>
             </v-btn>
-          </v-col>
         </v-row>
       </v-list-item>
     </v-list>
@@ -142,8 +136,23 @@ onMounted(() => {
   window.addEventListener("beforeunload", saveToLocalStorage);
 });
 
+
 onBeforeUnmount(() => {
   document.removeEventListener("visibilitychange", saveToLocalStorageIfHidden);
   window.removeEventListener("beforeunload", saveToLocalStorage);
 });
 </script>
+
+
+<style scoped>
+.transaction-text {
+  white-space: nowrap;       /* Prevent line breaks */
+  overflow: hidden;          /* Hide overflowing content */
+  text-overflow: ellipsis;   /* Show ellipsis for overflow */
+  max-width: 85%;         /* Set a max width to control the space */
+}
+
+.right-text {
+  margin-left: auto;        /* Push this paragraph to the right */
+}
+</style>

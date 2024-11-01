@@ -31,6 +31,9 @@
             justify="space-between"
             class="mr-2 ml-2 mb-2 mt-2"
           >
+
+
+          
             <v-col cols="auto">
               <v-radio :value="index" />
             </v-col>
