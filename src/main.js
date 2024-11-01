@@ -17,9 +17,7 @@ const vuetify = createVuetify({
 });
 
 const app = createApp(App);
-
 registerSW();
 app.use(vuetify);
+
 app.mount("#app");
-
-
